@@ -1,0 +1,147 @@
+/* Global Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex !important;
+}
+
+.modal-content {
+    background: var(--gemini-surface);
+    padding: 0;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    border: 1px solid var(--gemini-border);
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+
+.modal-header {
+    padding: 24px;
+    border-bottom: 1px solid var(--gemini-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--gemini-surface);
+    border-radius: 16px 16px 0 0;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--gemini-text);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--gemini-text-secondary);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+    background: var(--gemini-hover);
+    color: var(--gemini-text);
+}
+
+.modal-body {
+    padding: 24px;
+    color: var(--gemini-text);
+    max-height: calc(90vh - 140px);
+    overflow-y: auto;
+}
+
+.modal-footer {
+    padding: 20px 24px;
+    border-top: 1px solid var(--gemini-border);
+    background: var(--gemini-bg);
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    border-radius: 0 0 16px 16px;
+}
+
+/* Body modal ochiq bo'lganda */
+body.modal-open {
+    overflow: hidden !important;
+    padding-right: 17px; /* Scrollbar o'rnini to'ldirish */
+}
+
+/* Modal animatsiyasi */
+.modal.show {
+    display: block !important;
+}
+
+.modal-content.show {
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+/* Responsive modal */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 10px;
+        width: calc(100% - 20px);
+    }
+}
+
+/* Slide Panel umumiy stillar */
+.slide-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.slide-panel.active {
+    right: 0;
+}
+
+.slide-panel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: none;
+}
+
+/* Body slide panel ochiq bo'lganda */
+body.slide-panel-open {
+    overflow: hidden !important;
+}

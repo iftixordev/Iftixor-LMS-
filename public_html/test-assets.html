@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Asset Test</title>
+</head>
+<body>
+    <h2>CSS Test</h2>
+    <link rel="stylesheet" href="css/gemini-admin.css">
+    <div class="gemini-card">CSS loaded if styled</div>
+    
+    <h2>JS Test</h2>
+    <script src="js/error-handler.js"></script>
+    <script>
+        console.log('JS files:', typeof ErrorHandler !== 'undefined' ? 'Loaded' : 'Not loaded');
+    </script>
+    
+    <h2>Image Test</h2>
+    <img src="images/default-avatar.svg" width="32" alt="Avatar" onerror="this.style.border='2px solid red'">
+    <img src="images/iftixor-logo.svg" width="100" alt="Logo" onerror="this.style.border='2px solid red'">
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Page loaded');
+            console.log('CSS files count:', document.styleSheets.length);
+        });
+    </script>
+</body>
+</html>
